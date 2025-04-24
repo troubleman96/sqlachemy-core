@@ -1,6 +1,6 @@
 
 
-from sqlalchemy  import create_engine, MetaData, Table, Column, String, Integer, insert
+from sqlalchemy  import create_engine, MetaData, Table, Column, String, Integer, TEXT
 
 #engine = create_engine('sqlite:///mydatabase.db', echo=True)
 
@@ -18,10 +18,3 @@ people = Table(
 
 meta.create_all(engine)
 
-conn = engine.connect()
-
-#insert_statement = people.insert().values(name='Mike', age=30)
-
-insert_statement = insert(people).values(name='Trouble', age=24)
-result = conn.execute(insert_statement)
-conn.commit()

@@ -22,6 +22,6 @@ conn = engine.connect()
 
 #insert_statement = people.insert().values(name='Mike', age=30)
 
-insert_statement = insert(people).values(name='Trouble', age=24)
+insert_statement = insert.
 result = conn.execute(insert_statement)
 conn.commit()
